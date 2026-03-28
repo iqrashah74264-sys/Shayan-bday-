@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Shayan ❤️</title>
+<style>
+body{
+  margin:0;
+  padding:0;
+  background:linear-gradient(45deg,#000000,#1a001a,#330033);
+  color:white;
+  font-family:Arial, sans-serif;
+  text-align:center;
+  overflow:hidden;
+}
+
+.page{
+  display:none;
+  height:100vh;
+  width:100%;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
+
+.active{
+  display:flex;
+}
+
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  background:#ff4da6;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  margin-top:20px;
+}
+
+.big-text{
+  font-size:40px;
+  animation:fade 2s infinite alternate;
+}
+
+@keyframes fade{
+  from{opacity:0.5;}
+  to{opacity:1;}
+}
+
+/* Love Animation */
+.love-bg{
+  font-size:30px;
+  position:absolute;
+  animation:move 5s linear infinite;
+}
+
+@keyframes move{
+  0%{transform:translateY(100vh);}
+  100%{transform:translateY(-100vh);}
+}
+
+/* Kiss Animation */
+.kiss{
+  position:absolute;
+  font-size:25px;
+  animation:float 4s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(100vh);}
+  100%{transform:translateY(-100vh);}
+}
+
+/* Cake Animation */
+.cake{
+  font-size:120px;
+  animation:bounce 1s infinite alternate;
+}
+
+@keyframes bounce{
+  from{transform:translateY(0);}
+  to{transform:translateY(-20px);}
+}
+
+.candle{
+  font-size:40px;
+  animation:flicker 0.5s infinite alternate;
+}
+
+@keyframes flicker{
+  from{opacity:0.6;}
+  to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Page 1 -->
+<div class="page active" id="page1">
+  <div class="big-text">🎉 Happy Birthday Shayan ❤️</div>
+  <button onclick="nextPage(1)">Enter</button>
+</div>
+
+<!-- Page 2 -->
+<div class="page" id="page2">
+  <div>
+  Happy Birthday, my love ❤️ <br><br>
+  You are the most special person in my life. 💞 <br>
+  Thank you for being my everything. 🫀 <br>
+  I want to make you the happiest today and always. 🥺✨ <br>
+  You are the best thing that ever happened to me. 💖 <br><br>
+  I love you so much ❤️😘 <br>
+  I will love you forever and always. 💕 <br>
+  You will forever be mine and I will forever be yours. 💋
+  </div>
+  <button onclick="nextPage(2)">Next</button>
+</div>
+
+<!-- Page 3 -->
+<div class="page" id="page3">
+  <div id="loveContainer"></div>
+  <button onclick="nextPage(3)">Next</button>
+</div>
+
+<!-- Page 4 -->
+<div class="page" id="page4">
+  <div id="kissContainer"></div>
+  <button onclick="nextPage(4)">Next</button>
+</div>
+
+<!-- Page 5 -->
+<div class="page" id="page5">
+  <div>
+  Sometimes I can't even explain how much you mean to me 🥺❤️ <br><br>
+  When I feel weak, you are my strength. <br>
+  When I feel sad, you are my smile. <br>
+  My heart feels safe with you. 💞 <br>
+  I just pray we stay together forever. 🫶
+  </div>
+  <button onclick="nextPage(5)">Next</button>
+</div>
+
+<!-- Page 6 (Cake Page 🎂) -->
+<div class="page" id="page6">
+  <div class="candle">🕯️🕯️🕯️</div>
+  <div class="cake">🎂</div>
+  <div class="big-text">
+    Happy Birthday Again My Shayan ❤️ <br>
+    Make a wish my love ✨💖
+  </div>
+  <button onclick="nextPage(6)">Final Surprise</button>
+</div>
+
+<!-- Page 7 -->
+<div class="page" id="page7">
+  <div class="big-text">
+  💍 You + Me = Forever ❤️ <br><br>
+  You are my today, my tomorrow, and my always 💕 <br>
+  I love you endlessly 🥺💖
+  </div>
+</div>
+
+<script>
+function nextPage(current){
+  document.getElementById("page"+current).classList.remove("active");
+  document.getElementById("page"+(current+1)).classList.add("active");
+
+  if(current==2){
+    for(let i=0;i<30;i++){
+      let love=document.createElement("div");
+      love.className="love-bg";
+      love.style.left=Math.random()*100+"%";
+      love.innerHTML="I LOVE YOU ❤️";
+      document.getElementById("loveContainer").appendChild(love);
+    }
+  }
+
+  if(current==3){
+    for(let i=0;i<50;i++){
+      let kiss=document.createElement("div");
+      kiss.className="kiss";
+      kiss.style.left=Math.random()*100+"%";
+      kiss.innerHTML="💋";
+      document.getElementById("kissContainer").appendChild(kiss);
+    }
+  }
+}
+</script>
+
+</body>
+</html>
